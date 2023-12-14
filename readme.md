@@ -1,3 +1,4 @@
+
 # MM Diana OS
 This is a reversed engineered HT Diana with the aim to maintain most of it's hardware, but replacing the micro-controller and chips that power it.
 The objective is to make the blaster's chip easily replacable, making it open source and add more functions to the blaster.
@@ -7,25 +8,27 @@ The rage/cool mode switch is now used as Profile switch, setting Profile 1 or Pr
 To turn off motor, just switch it to Safe and the flywheel will stop spinning(if you are in rage mode).
 
 ## Configuration
+You can access configuration by connecting to your blaster's WiFi(SSID is the `blasterName` below), then access http://192.168.42.1 for Raspberry Pico W or http://192.168.4.1 for ESP32
+
 - blasterName
-Set a name for your blaster. This is also used as the blaster's WiFi SSID. Default to `Blaster_Diana`
+  Set a name for your blaster. This is also used as the blaster's WiFi SSID. Default to `Blaster_Diana`
 
 - apWiFiPassword
-Password for your blaster's WiFi password. Default to `monkeemods`
+  Password for your blaster's WiFi password. Default to `monkeemods`
 
 - loginUsername & loginPassword
-For future use when connect to MMNetwork
+  For future use when connect to MMNetwork
 
 - wifiSSID
-Connect to a WiFi router SSID (eg your home network). You can set a few SSID, seperate them with ,
-Eg: network1,network2,network3
+  Connect to a WiFi router SSID (eg your home network). You can set a few SSID, seperate them with ,
+  Eg: network1,network2,network3
 
 - wifiPassword
-The password for WiFi SSID.
-Eg: network1password,network2password,network3password
+  The password for WiFi SSID.
+  Eg: network1password,network2password,network3password
 
 - profile1MotorMode
-The flywheel mode when in Profile 1. `rage` will spin the flywheel at `motorSpeedModeCruise` speed. `cool` will not spin the motor but you will need apply a delay(configurable in `coolModeTriggerDelay`)
+  The flywheel mode when in Profile 1. `rage` will spin the flywheel at `motorSpeedModeCruise` speed. `cool` will not spin the motor but you will need apply a delay(configurable in `coolModeTriggerDelay`)
 
 - profile1FiringMode1/profile1FiringMode2/profile1FiringMode3/profile2FiringMode1/profile2FiringMode2/profile2FiringMode3
 
@@ -42,31 +45,31 @@ Burst2 = Shots configured in `burstFireAmount2`
 Auto = Full auto with maximum limit set in `fullAutoMaxAmount`
 
 - coolModeTriggerDelay
-Delay after pulling the trigger to firing when in `cool` mode to ensure flywheel spin up to speed. BLHeli ESC have a 100ms delay so make sure you account this. Value is milliseconds
+  Delay after pulling the trigger to firing when in `cool` mode to ensure flywheel spin up to speed. BLHeli ESC have a 100ms delay so make sure you account this. Value is milliseconds
 
 - rageModeTriggerDelay
-Delay after pulling the trigger to firing when in `rage` mode. You most likely don't need this unless you are looking to maximise your FPS. Value is milliseconds
+  Delay after pulling the trigger to firing when in `rage` mode. You most likely don't need this unless you are looking to maximise your FPS. Value is milliseconds
 
 - motorShutoffDelay
-The delay to turn off the flywheel after finish firing. Value is milliseconds
+  The delay to turn off the flywheel after finish firing. Value is milliseconds
 
 - firingRate
-Darts per seconds. Setting this too high will result in solenoid not working
+  Darts per seconds. Setting this too high will result in solenoid not working
 
 - burstFireAmount1
-The amount of burstfire shot for `burst1`
+  The amount of burstfire shot for `burst1`
 
 - burstFireAmount2
-The amount of burstfire shot for `burst2`
+  The amount of burstfire shot for `burst2`
 
 - fullAutoMaxAmount
-The maximum shot for full auto. You can limit this to control your full auto or do 1-X amount of shots, based on the value you set.
+  The maximum shot for full auto. You can limit this to control your full auto or do 1-X amount of shots, based on the value you set.
 
 - motorSpeedModeCruise
-The flywheel speed in rage mode. Value is 1-100, it means 1-100%. This value might varies ESC to ESC, in my case my ESC requires a min of 21 to turn on.
+  The flywheel speed in rage mode. Value is 1-100, it means 1-100%. This value might varies ESC to ESC, in my case my ESC requires a min of 21 to turn on.
 
 - motorSpeedModeFull
-The maximum flywheel speed when firing. Value is 1-100 as well. You can limit this to lower your FPS output.
+  The maximum flywheel speed when firing. Value is 1-100 as well. You can limit this to lower your FPS output.
 
 - semiAutoBehavior/burstFireBehavior
 
@@ -79,7 +82,7 @@ In `reactive` mode, it WILL NOT ignore the trigge pull in mid firing cycle. Whil
 This applies to semi auto as well but since the speed is too fast, you will barely notice this unless you do it on purpose. Using `passive` trigger might give you the sense of the trigger malfunction so configure this based on your preference.
 
 - frontSightEnable
-Enable front sight LED. It's just 8mA so off or on won't save you much battery.
+  Enable front sight LED. It's just 8mA so off or on won't save you much battery.
 
 ## Hardware Needed
 - Raspberry Pico W
